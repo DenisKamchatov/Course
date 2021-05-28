@@ -44,7 +44,9 @@
                 <div class="main__catalog catalog">
                     {% for c in catalog %}
                     <div class="catalog__block">
-                        <img class="catalog__img" src="{% static 'app/images/apple.jpg' %}" alt="{{ c.title }}">
+                        {% if c.image %}
+                        <img class="catalog__img" src="{{ c.image.url }}" alt="{{ c.title }}">
+                        {% endif %}
                         <h3 class="catalog__title">{{ c.title }}</h3>
                         <p class="catalog__description">{{ c.description }}</p>
                         <p class="catalog__price">{{ c.price }}</p>

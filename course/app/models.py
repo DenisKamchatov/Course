@@ -19,7 +19,7 @@ class User(models.Model):
 class Product(models.Model):
     title = models.CharField('Название', max_length=254)
     description = models.TextField('Описание')
-    image = models.ImageField('Картинка', upload_to='photos/%Y/%m/%d/', null=True)
+    image = models.ImageField('Картинка', upload_to='photos/%Y/%m/%d/')
     price = models.CharField('Цена', max_length=100)  # Поменять CharField на что-то другое
     cat = models.ForeignKey('Categories', on_delete=models.CASCADE, null=True)
 
