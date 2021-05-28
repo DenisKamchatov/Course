@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+body,
+html {
+  font-size: 18px;
+  color: #141414;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  color: #141414;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header__inner {
+  border-bottom: 1.5px solid #9c9c9c;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 0 2rem 0;
+}
+.header__logo {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+.header__nav {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+.header__list {
+  display: flex;
+}
+.header__list li:not(:first-of-type) {
+  margin-left: 2rem;
+}
+
+.main__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0 4rem 0;
+}
+.main .categories {
+  border-right: 1.5px solid #9c9c9c;
+  flex-basis: 25%;
+  font-size: 1.3rem;
+}
+.main .categories__list {
+  padding-top: 2.5rem;
+}
+.main .categories__list li:not(:first-of-type) {
+  margin-top: 2rem;
+}
+.main .catalog {
+  display: grid;
+  flex-basis: 70%;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+.main .catalog__img {
+  width: 100%;
+  height: auto;
+}
+.main .catalog__block {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1rem #dddddd;
+  padding: 1rem;
+}
+.main .catalog__title {
+  text-align: center;
+  padding-top: 0.8rem;
+}
+.main .catalog__description {
+  padding-top: 0.8rem;
+}
+.main .catalog__price {
+  padding-top: 0.8rem;
+  text-align: end;
+}
+.main .catalog__more {
+  padding-top: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.main .catalog__more-text {
+  background-color: #d8d8d8;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.footer {
+  box-shadow: 0 0 1rem #dddddd;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 40%;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  padding: 4rem 0 4rem 0;
+}
+.footer .block {
+  flex-basis: 24%;
+}
+.footer .block__title {
+  padding-bottom: 2rem;
+}
+.footer .block__list li:not(:first-of-type) {
+  padding-top: 1rem;
+}
+.footer .block .form__email {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  background-color: #e9e9e9;
+  width: 85%;
+}/*# sourceMappingURL=style.css.map */

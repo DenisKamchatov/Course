@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'app/images/icon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+    {% block mainmenu %}
+        <h1>Главная страница</h1>
+        <a href="{% url 'categories' %}">Категории</a>
+        {% for m in menu %}
+            <a href="{% url m.url_name %}">{{ m.title }}</a>
+        {% endfor %}
+    {% endblock mainmenu %}
+    </header>
+
+
+    {% block content %}
+    <h2>Все товары</h2>
+    {% for c in catalog %}
+        <div class="catalog">
+            <h3>{{ c.title }}</h3>
+            <p>{{ c.description }}</p>
+            <p>{{ c.price }}</p>
+            <a href="{{ c.get_absolute_url }}">Подробнее</a>
+        </div>
+    {% endfor %}
+    {% endblock %}
+
+</body>
+</html>

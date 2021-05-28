@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'app/css/zeroing-file.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+
+<body>
+    {% block headerblock %}
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <p class="header__logo">Kamchatov Products</p>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Заявка на звонок</a></li>
+                        <li><a href="#">Войти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% endblock headerblock %}
+
+    {% block main%}
+    <main class="main">
+        <div class="container">
+            <div class="main__inner">
+                <div class="main__categories categories">
+                    <h2 class="categories__title">Все категории</h2>
+                    <ul class="categories__list">
+                        {% for c in categories %}
+                        <li><a href="#">{{ c.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="main__catalog catalog">
+                    {% for c in catalog %}
+                    <div class="catalog__block">
+                        <img class="catalog__img" src="{% static 'app/images/apple.jpg' %}" alt="{{ c.title }}">
+                        <h3 class="catalog__title">{{ c.title }}</h3>
+                        <p class="catalog__description">{{ c.description }}</p>
+                        <p class="catalog__price">{{ c.price }}</p>
+                        <div class="catalog__more">
+                            <a class="catalog__more-text" href="#">Узнать подробнее</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock main %}
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__block block">
+                    <h3 class="block__title">Покупателям</h3>
+                    <ul class="block__list">
+                        <li>Доставка</li>
+                        <li>Оплата</li>
+                        <li>Личный кабинет</li>
+                    </ul>
+                </div>
+                <div class="footer__block block">
+                    <h3 class="block__title">Информация</h3>
+                    <ul class="block__list">
+                        <li>О нас</li>
+                        <li>Блог</li>
+                        <li>Обратная связь</li>
+                    </ul>
+                </div>
+                <div class="footer__block block">
+                    <h3 class="block__title">Мы на связи</h3>
+                    <p class="footer__number">+7 (495) 123-45-67</p>
+                    <!-- svg спрайт с соц. сетями -->
+                </div>
+                <div class="footer__block block">
+                    <h3 class="block__title">Подписка на новости</h3>
+                    <p class="block__text">Получите доступ к эксклюзивным скидкам</p>
+                    <form class="block__form form" action="" method="GET">
+                        <label for="email" hidden>Email</label>
+                        <input class="form__email" type="text" placeholder="E-mail" id="email" name="email">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock footer %}
+</body>
+
+</html>
