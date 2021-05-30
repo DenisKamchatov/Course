@@ -1,4 +1,5 @@
 {% load static %}
+{% load app_tags %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="{% static 'app/css/zeroing-file.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 </head>
@@ -16,7 +17,7 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <p class="header__logo">Kamchatov Products</p>
+                <p class="header__logo selected">Kamchatov Products</p>
                 <nav class="header__nav">
                     <ul class="header__list">
                         <li><a href="#">Отзывы</a></li>
@@ -35,20 +36,12 @@
             <div class="main__inner">
                 <div class="main__categories categories">
                     {% if cat_selected == 0 %}
-                    <h2 class="categories__title">Все категории</h2>
+                    <h2 class="categories__title selected">Все категории</h2>
                     {% else %}
-                    <h2 class="categories__title"><a href="{% url 'home' %}">Все категории</a></h2>
+                    <h2 class="categories__title selected"><a href="{% url 'home' %}">Все категории</a></h2>
                     {% endif %}
                     <ul class="categories__list">
-                        {% for c in categories %}
-
-                        {% if c.pk == cat_selected %}
-                        <li>{{ c.title }}</li>
-                        {% else %}
-                        <li><a href="{{ c.get_absolute_url }}">{{ c.title }}</a></li>
-                        {% endif %}
-
-                        {% endfor %}
+                        {% show_categories %}
                     </ul>
                 </div>
                 <div class="main__catalog catalog">

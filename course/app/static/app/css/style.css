@@ -24,6 +24,10 @@ h3 {
   margin: 0 auto;
 }
 
+.selected {
+  color: #2060c7;
+}
+
 .header__inner {
   border-bottom: 1.5px solid #9c9c9c;
   display: flex;
