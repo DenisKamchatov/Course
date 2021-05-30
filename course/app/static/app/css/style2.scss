@@ -29,6 +29,11 @@ h3 {
     color: rgb(32, 96, 199);
 }
 
+.hover:hover {
+    color: rgb(49, 113, 218);
+    transition: 200ms linear;
+}
+
 // Основные блоки
 
 .header {
@@ -52,6 +57,15 @@ h3 {
         li:not(:first-of-type) {
             margin-left: 2rem;
         }
+
+        li {
+            // a {
+            //     transition: 300ms linear;
+            // }
+            // a:hover {
+            //     color: rgb(32, 96, 199);
+            // }
+        }
     }
 }
 
@@ -71,6 +85,12 @@ h3 {
             padding-top: 2.5rem;
             li:not(:first-of-type) {
                 margin-top: 2rem;
+            }
+            li {
+                // a:hover {
+                //     transition: 300ms linear;
+                //     color: rgb(32, 96, 199);
+                // }
             }
         }
     }
