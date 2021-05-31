@@ -23,6 +23,14 @@ def show_category(request, cat_id):
     return render(request, 'app/index.html', context=context)
 
 
+def entry(request):
+    user = User.objects.all()
+    context = {
+        'user': user,
+    }
+    return render(request, 'app/entry.html', context=context)
+
+
 def reviews(request):
     return HttpResponse('Отзывы')
 
