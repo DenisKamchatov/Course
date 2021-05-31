@@ -6,7 +6,9 @@ from .models import *
 
 def site(request):
     catalog = Product.objects.all()
+    # reviews = Reviews.objects.all()
     context = {
+        # 'reviews': reviews,
         'title': 'Сорт',
         'catalog': catalog,
         'cat_selected': 0,

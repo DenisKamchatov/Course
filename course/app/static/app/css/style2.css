@@ -55,7 +55,7 @@ h3 {
   margin-left: 2rem;
 }
 
-.main__inner {
+.main__assortment {
   display: flex;
   justify-content: space-between;
   padding: 3rem 0 4rem 0;
@@ -183,4 +183,38 @@ h3 {
 }
 .main .form label:not(:first-of-type) {
   padding-top: 1rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.main__reviews-title {
+  padding: 0 0 2rem 0;
+}
+
+.review {
+  box-shadow: 0 0 1rem #dddddd;
+  padding: 1.3rem;
+}
+.review__person {
+  display: flex;
+  align-items: center;
+}
+.review__image {
+  max-width: 80px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+.review__person-name {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+.review__text {
+  padding-top: 1rem;
+  line-height: 1.5rem;
+}
+
+.review:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+.review:last-of-type {
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=style2.css.map */

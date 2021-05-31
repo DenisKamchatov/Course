@@ -61,7 +61,7 @@ h3 {
 }
 
 .main {
-    &__inner {
+    &__assortment {
         display: flex;
         justify-content: space-between;
         padding: 3rem 0 4rem 0;
@@ -209,4 +209,39 @@ h3 {
     }
 }
 
-// Стили для страницы с отзывами
+// Стили для блока с отзывами
+.main {
+    &__reviews-title {
+        padding: 0 0 2rem 0;
+    }
+}
+.review {
+    box-shadow: 0 0 1rem rgb(221, 221, 221);
+    padding: 1.3rem;
+
+    &__person {
+        display: flex;
+        align-items: center;
+    }
+    &__image {
+        max-width: 80px;
+        height: auto;
+        border-radius: 0.5rem;
+    }
+
+    &__person-name {
+        padding-left: 1rem;
+        font-size: 1.3rem;
+    }
+
+    &__text {
+        padding-top: 1rem;
+        line-height: 1.5rem;
+    }
+}
+.review:not(:first-of-type) {
+    margin-top: 1.5rem;
+}
+.review:last-of-type {
+    margin-bottom: 2rem;
+}

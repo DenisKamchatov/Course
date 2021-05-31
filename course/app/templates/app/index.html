@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'app/css/zeroing-file.css' %}">
-    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-    <title>Каталог</title>
+    <link rel="stylesheet" href="{% static 'app/css/style2.css' %}">
+    <title>Главная</title>
 
 </head>
 
@@ -34,35 +34,38 @@
     <main class="main">
         <div class="container">
             <div class="main__inner">
-                <div class="main__categories categories">
-                    {% if cat_selected == 0 %}
-                    <h2 class="categories__title selected">Все категории</h2>
-                    {% else %}
-                    <h2 class="categories__title hover"><a href="{% url 'home' %}">Все категории</a></h2>
-                    {% endif %}
-                    <ul class="categories__list">
-                        {% show_categories cat_selected %}
-                    </ul>
-                </div>
-                <div class="main__catalog catalog">
-                    {% for c in catalog %}
-                    <div class="catalog__block">
-                        {% if c.image %}
-                        <img class="catalog__img" src="{{ c.image.url }}" alt="{{ c.title }}">
+                <section class="main__assortment">
+                    <div class="main__categories categories">
+                        {% if cat_selected == 0 %}
+                        <h2 class="categories__title selected">Все категории</h2>
+                        {% else %}
+                        <h2 class="categories__title hover"><a href="{% url 'home' %}">Все категории</a></h2>
                         {% endif %}
-                        <h3 class="catalog__title">{{ c.title }}</h3>
-                        <p class="catalog__description">{{ c.description }}</p>
-                        <p class="catalog__price">{{ c.price }}</p>
-                        <div class="catalog__more">
-                            <a class="catalog__more-text" href="#">Узнать подробнее</a>
-                        </div>
+                        <ul class="categories__list">
+                            {% show_categories cat_selected %}
+                        </ul>
                     </div>
-                    {% endfor %}
-                </div>
-                <div class="main__reviews">
-                    <h2>Отзывы наших покупателей</h2>
+                    <div class="main__catalog catalog">
+                        {% for c in catalog %}
+                        <div class="catalog__block">
+                            {% if c.image %}
+                            <img class="catalog__img" src="{{ c.image.url }}" alt="{{ c.title }}">
+                            {% endif %}
+                            <h3 class="catalog__title">{{ c.title }}</h3>
+                            <p class="catalog__description">{{ c.description }}</p>
+                            <p class="catalog__price">{{ c.price }}</p>
+                            <div class="catalog__more">
+                                <a class="catalog__more-text" href="#">Узнать подробнее</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
 
-                </div>
+                <section class="main__reviews">
+                    <h2 class="main__reviews-title">Отзывы наших покупателей</h2>
+                    {% get_reviews %}
+                </section>
             </div>
         </div>
     </main>

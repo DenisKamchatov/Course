@@ -1,5 +1,5 @@
 from django import template
-from app.models import Categories
+from app.models import Categories, Reviews
 
 register = template.Library()
 
@@ -23,3 +23,9 @@ def show_menu():
     {'title': 'Оставить заявку', 'url_name': 'application'},    
     ]
     return {'menu': menu}
+
+
+@register.inclusion_tag('app/reviews.html')
+def get_reviews():
+    reviews = Reviews.objects.all()
+    return {'reviews': reviews}
