@@ -22,7 +22,9 @@ class Product(models.Model):
     description = models.TextField('Описание')
     image = models.ImageField('Картинка', upload_to='photos/%Y/%m/%d/', null=True)
     price = models.CharField('Цена', max_length=100)  # Поменять CharField на что-то другое
-    cat = models.ForeignKey('Categories', on_delete=models.CASCADE, null=True)
+    cat = models.ForeignKey('Categories', on_delete=models.CASCADE, verbose_name='Категории')
+    slug = models.SlugField(max_length=254, unique=True, db_index=True, verbose_name='URL')
+
 
     def __str__(self):
         return self.title
@@ -37,6 +39,7 @@ class Product(models.Model):
 
 class Categories(models.Model):
     title = models.CharField('Название', max_length=100)
+    slug = models.SlugField(max_length=254, unique=True, db_index=True, verbose_name='URL')
 
     def __str__(self):
         return self.title

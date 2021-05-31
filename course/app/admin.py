@@ -5,12 +5,16 @@ from .models import Categories, Product, User, Application, Reviews, Subscriptio
 class CategoriesAdmin(admin.ModelAdmin):
     list_display = 'title'
     search_fields = 'title'
+    prepopulated_fields = {'slug': ('title',)}
 
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'description', 'image', 'price')
     list_display_links = ('id', 'title')
     search_fields = ('title', 'price')
+    prepopulated_fields = {'slug': ('title',)}
+
+
 
 
 class UserAdmin(admin.ModelAdmin):
