@@ -1,9 +1,9 @@
-{% for r in reviews %}
+{% for n in new %}
 <div class="main__review review">
     <div class="review__person">
-        <img class="review__image" src="{{ r.image.url }}" alt="Изображение пользователя">
-        <p class="review__person-name">{{ r.name }} {{ r.surname }}</p>
+        <img class="review__image" src="{{ n.image.url }}" alt="Изображение пользователя">
+        <p class="review__person-name">{{ n.name }} {{ n.surname }}</p>
     </div>
-    <p class="review__text">{{ r.text }}</p>
+    <p class="review__text">{{ n.text }}</p>
 </div>
 {% endfor %}

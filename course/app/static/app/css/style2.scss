@@ -34,6 +34,18 @@ h3 {
     transition: 200ms linear;
 }
 
+.three-points {
+    &__block {
+        display: flex;
+        justify-content: center;
+    }
+    &__image {
+        max-width: 80px;
+        height: auto;
+        opacity: 50%;
+    }
+}
+
 // Стили страницы каталога
 
 .header {
@@ -64,7 +76,7 @@ h3 {
     &__assortment {
         display: flex;
         justify-content: space-between;
-        padding: 3rem 0 4rem 0;
+        padding-top: 3rem;
     }
     .categories {
         border-right: 1.5px solid rgb(156, 156, 156);
@@ -210,9 +222,10 @@ h3 {
 }
 
 // Стили для блока с отзывами
+
 .main {
     &__reviews-title {
-        padding: 0 0 2rem 0;
+        padding: 4rem 0 2rem 0;
     }
 }
 .review {
@@ -245,3 +258,5 @@ h3 {
 .review:last-of-type {
     margin-bottom: 2rem;
 }
+
+// Стили для страницы с отзывами

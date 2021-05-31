@@ -6,9 +6,7 @@ from .models import *
 
 def site(request):
     catalog = Product.objects.all()
-    # reviews = Reviews.objects.all()
     context = {
-        # 'reviews': reviews,
         'title': 'Сорт',
         'catalog': catalog,
         'cat_selected': 0,
@@ -34,7 +32,7 @@ def entry(request):
 
 
 def reviews(request):
-    return HttpResponse('Отзывы')
+    return render(request, 'app/site_reviews.html')
 
 
 def application(request):

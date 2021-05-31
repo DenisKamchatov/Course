@@ -33,6 +33,16 @@ h3 {
   transition: 200ms linear;
 }
 
+.three-points__block {
+  display: flex;
+  justify-content: center;
+}
+.three-points__image {
+  max-width: 80px;
+  height: auto;
+  opacity: 50%;
+}
+
 .header__inner {
   border-bottom: 1.5px solid #9c9c9c;
   display: flex;
@@ -58,7 +68,7 @@ h3 {
 .main__assortment {
   display: flex;
   justify-content: space-between;
-  padding: 3rem 0 4rem 0;
+  padding-top: 3rem;
 }
 .main .categories {
   border-right: 1.5px solid #9c9c9c;
@@ -186,7 +196,7 @@ h3 {
 }
 
 .main__reviews-title {
-  padding: 0 0 2rem 0;
+  padding: 4rem 0 2rem 0;
 }
 
 .review {

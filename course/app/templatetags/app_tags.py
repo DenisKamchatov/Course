@@ -27,5 +27,11 @@ def show_menu():
 
 @register.inclusion_tag('app/reviews.html')
 def get_reviews():
+    new = Reviews.objects.all()[:3]
+    return {'new': new}
+
+
+@register.inclusion_tag('app/get_site_reviews.html')
+def show_reviews():
     reviews = Reviews.objects.all()
     return {'reviews': reviews}
