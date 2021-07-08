@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'app/css/zeroing-file.css' %}">
-    <link rel="stylesheet" href="{% static 'app/css/style3.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/zeroing-file2.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
     <title>Войти</title>
 </head>
 
@@ -15,23 +15,19 @@
     <div class="container">
         <header class="header">
             <header class="header">
-                <div class="container">
-                    <div class="header__inner">
-                        <a href="{% url 'home' %}" class="header__logo">Kamchatov Products</a>
-                    </div>
+                <div class="header__inner">
+                    <a href="{% url 'home' %}" class="header__logo">Kamchatov Products</a>
                 </div>
             </header>
         </header>
         <main class="main">
-            <div class="container">
-                <div class="main__inner">
-                    <form action="{% url 'entry' %}" method="POST" class="main__form form">
-                        <p class="form__title">Зарегистрируйтесь</p>
-                        {% csrf_token %}
-                        {{ form }}
-                        <input type="submit" value="Зарегистрироваться" class="form__button" href="{% url 'home' %}">
-                    </form>
-                </div>
+            <div class="main__inner">
+                <form action="{% url 'entry' %}" method="POST" class="main__form form">
+                    <p class="form__title">Зарегистрируйтесь</p>
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Зарегистрироваться" class="form__button" href="{% url 'home' %}">
+                </form>
             </div>
         </main>
     </div>

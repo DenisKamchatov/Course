@@ -1,11 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
+$screen-xs: 0;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-max-xxs: 375px;
+$screen-max-xs: 575px;
+$screen-max-sm: 767px;
+$screen-max-md: 991px;
+$screen-max-lg: 1199px;
+
+// Сделать бургер
+
 body,
 html {
     font-size: 18px;
     color: rgb(20, 20, 20);
     font-family: "Raleway", sans-serif;
+
+    @media (max-width: $screen-max-md) {
+        font-size: 15px;
+    }
+    @media (max-width: $screen-max-xs) {
+        font-size: 20px;
+    }
 }
 
 a {
@@ -23,6 +44,10 @@ h3 {
 .container {
     width: 90%;
     margin: 0 auto;
+
+    @media (max-width: $screen-max-xs) {
+        width: 75%;
+    }
 }
 
 .selected {
@@ -55,6 +80,7 @@ h3 {
         justify-content: space-between;
         padding: 4rem 0 2rem 0;
     }
+
     &__logo {
         font-size: 2rem;
         font-family: "Poppins", sans-serif;
@@ -68,6 +94,17 @@ h3 {
         display: flex;
         li:not(:first-of-type) {
             margin-left: 2rem;
+        }
+    }
+
+    @media (max-width: $screen-max-sm) {
+        &__nav {
+            display: none;
+        }
+    }
+    @media (max-width: $screen-max-xxs) {
+        &__logo {
+            font-size: 1.7rem;
         }
     }
 }
@@ -139,6 +176,77 @@ h3 {
             transition: 300ms linear;
         }
     }
+
+    @media (max-width: $screen-max-sm) {
+        &__assortment {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 0rem;
+        }
+
+        .categories {
+            display: flex;
+            align-items: center;
+            border-right: none;
+
+            &__list {
+                display: flex;
+                align-items: center;
+
+                li {
+                    padding-left: 1.5rem;
+                }
+
+                padding-top: 0px;
+                li:not(:first-of-type) {
+                    margin-top: 0px;
+                }
+            }
+        }
+
+        .catalog {
+            padding-top: 2rem;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: $screen-max-xs) {
+        .categories {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                li {
+                    padding-left: 0rem;
+                    padding-top: 1.5rem;
+                }
+
+                padding-top: 0px;
+                li:not(:first-of-type) {
+                    margin-top: 0px;
+                }
+            }
+        }
+
+        .catalog {
+            padding-top: 2rem;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (max-width: $screen-max-xxs) {
+        .categories {
+            &__title {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
 }
 
 .footer {
@@ -169,6 +277,25 @@ h3 {
                 background-color: rgb(233, 233, 233);
                 width: 85%;
             }
+        }
+    }
+
+    @media (max-width: $screen-max-sm) {
+        &__inner {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: $screen-max-xs) {
+        &__inner {
+            grid-template-columns: 1fr;
+        }
+        .block {
+            &__title {
+                padding-bottom: 1rem;
+            }
+        }
+        .block:not(:first-of-type) {
+            padding-top: 2rem;
         }
     }
 }
@@ -234,6 +361,48 @@ h3 {
             padding-top: 1rem;
         }
     }
+    @media (max-width: $screen-max-sm) {
+        .form {
+            &__button {
+                width: 80%;
+            }
+        }
+    }
+    @media (max-width: $screen-max-xs) {
+        .form {
+            width: 100%;
+
+            &__button {
+                width: 100%;
+                font-size: 0.8rem;
+            }
+            &__title {
+                font-size: 1.1rem;
+            }
+            label {
+                font-size: 0.9rem;
+            }
+            &__input {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    @media (max-width: $screen-max-xxs) {
+        .form {
+            &__button {
+                font-size: 0.7rem;
+            }
+            &__title {
+                font-size: 1rem;
+            }
+            label {
+                font-size: 0.9rem;
+            }
+            &__input {
+                font-size: 0.8rem;
+            }
+        }
+    }
 }
 
 // Стили для блока с отзывами
@@ -251,6 +420,7 @@ h3 {
         display: flex;
         align-items: center;
     }
+
     &__image {
         max-width: 80px;
         height: auto;
@@ -265,6 +435,20 @@ h3 {
     &__text {
         padding-top: 1rem;
         line-height: 1.5rem;
+    }
+    @media (max-width: $screen-max-xxs) {
+        &__person {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        &__person-name {
+            padding-left: 0rem;
+            padding-top: 1rem;
+        }
+        &__text {
+            font-size: 0.8rem;
+        }
     }
 }
 .review:not(:first-of-type) {
