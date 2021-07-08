@@ -18,7 +18,7 @@ def show_categories(cat_selected = 0):
 @register.inclusion_tag('app/list_menu.html')
 def show_menu():
     menu = [
-    {'title': 'Войти', 'url_name': 'login'},
+    {'title': 'Войти', 'url_name': 'entry'},
     {'title': 'Отзывы', 'url_name': 'reviews'},
     {'title': 'Оставить заявку', 'url_name': 'application'},    
     ]

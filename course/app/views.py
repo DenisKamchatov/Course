@@ -1,7 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from .models import *
+from .forms import *
 
 
 def site(request):
@@ -25,8 +26,20 @@ def show_category(request, cat_id):
 
 def entry(request):
     user = User.objects.all()
+    if request.method == 'POST':
+        form = AddUser(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/')
+            except:
+                form.add_error(None, 'Ошибка добавления поста')
+    else:
+        form = AddUser()
+
     context = {
         'user': user,
+        'form': form,
     }
     return render(request, 'app/entry.html', context=context)
 
@@ -36,7 +49,23 @@ def reviews(request):
 
 
 def application(request):
-    return HttpResponse('Оставить заявку')
+    application = Application.objects.all()
+    if request.method == 'POST':
+        app = AddRequest(request.POST)
+        if app.is_valid():
+            try:
+                app.save()
+                return redirect('/')
+            except:
+                app.add_error(None, 'Ошибка добавления поста')
+    else:
+        app = AddUser()
+
+    context = {
+        'application': application,
+        'app': app,
+    }
+    return render(request, 'app/request.html', context=context)
 
 
 def login(request):

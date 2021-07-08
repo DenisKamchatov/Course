@@ -71,7 +71,7 @@ class Application(models.Model):
     surname = models.CharField('Фамилия', max_length=150)
     number = models.CharField('Номер телефона', max_length=100)
     email = models.CharField('Почта', max_length=254)
-    text = models.TextField('Текст заявки')
+    text = models.TextField('Текст заявки', blank=True)
 
     def __str__(self):
         return self.name

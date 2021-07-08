@@ -8,7 +8,6 @@ urlpatterns = [
     path('category/<int:cat_id>', show_category, name="category"),
     path('reviews/', reviews, name="reviews"),
     path('application/', application, name="application"),
-    path('login/', login, name="login"),
 
     # path('site/', index),
     # path('categories/', categories, name="categories"),

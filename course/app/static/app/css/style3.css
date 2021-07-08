@@ -154,6 +154,9 @@ h3 {
   width: 85%;
 }
 
+.main {
+  margin-top: 4rem;
+}
 .main__form {
   display: flex;
   flex-direction: column;
@@ -175,16 +178,29 @@ h3 {
   padding-bottom: 1.5rem;
   font-size: 1.5rem;
 }
-.main .form input {
+.main .form__button {
+  color: #3a3a3a;
+  background-color: #cccccc;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  width: 50%;
+  margin: 1rem auto 0 auto;
+}
+.main .form__button:hover {
+  background-color: #3a3a3a;
+  color: #d8d8d8;
+  transition: 300ms linear;
+}
+.main .form__input {
   font-size: 1rem;
   padding: 0.5rem;
   color: #141414;
 }
-.main .form input:hover {
+.main .form__input:hover {
   background-color: #aaaaaa;
   transition: 300ms linear;
 }
-.main .form input:focus {
+.main .form__input:focus {
   background-color: #aaaaaa;
 }
 .main .form label {
@@ -227,4 +243,4 @@ h3 {
 
 .review:last-of-type {
   margin-bottom: 2rem;
-}/*# sourceMappingURL=style2.css.map */
+}/*# sourceMappingURL=style3.css.map */
