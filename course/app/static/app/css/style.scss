@@ -413,6 +413,7 @@ h3 {
 
 .main {
     margin-top: 4rem;
+
     &__form {
         display: flex;
         flex-direction: column;
@@ -428,6 +429,7 @@ h3 {
         border-radius: 1rem;
         width: 70%;
         margin: 0 auto;
+        margin-top: 8rem;
 
         justify-content: center;
         padding: 1.3rem;
