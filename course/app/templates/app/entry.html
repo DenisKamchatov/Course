@@ -1,4 +1,6 @@
 {% load static %}
+{% load app_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +14,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <header class="header">
-                <div class="header__inner">
+    <header class="header">
+        <nav class="header__body">
+            <div class="container">
+                <div class="wrapper">
                     <a href="{% url 'home' %}" class="header__logo">Kamchatov Products</a>
+                    <div class="header__menu-toggle icon">
+                        <div class="hamburger"></div>
+                    </div>
+
+                    <ul class="header__menu">
+                        {% show_menu %}
+                    </ul>
                 </div>
-            </header>
-        </header>
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
         <main class="main">
             <div class="main__inner">
                 <form action="{% url 'entry' %}" method="POST" class="main__form form">

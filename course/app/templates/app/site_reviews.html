@@ -15,16 +15,21 @@
 <body>
     {% block headerblock %}
     <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <a href="{% url 'home' %}" class="header__logo">Kamchatov Products</a>
-                <nav class="header__nav">
-                    <ul class="header__list">
+        <nav class="header__body">
+            <div class="container">
+                <div class="wrapper">
+                    <a href="{% url 'home' %}" class="header__logo">Kamchatov Products</a>
+                    <div class="header__menu-toggle icon">
+                        <div class="hamburger"></div>
+                    </div>
+
+                    <ul class="header__menu">
                         {% show_menu %}
                     </ul>
-                </nav>
+                </div>
             </div>
-        </div>
+
+        </nav>
     </header>
     {% endblock %}
     <main class="main">

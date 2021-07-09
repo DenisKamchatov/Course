@@ -9,7 +9,7 @@ $screen-xl: 1200px;
 
 $screen-max-xxs: 375px;
 $screen-max-xs: 575px;
-$screen-max-sm: 767px;
+$screen-max-sm: 830px;
 $screen-max-md: 991px;
 $screen-max-lg: 1199px;
 
@@ -71,24 +71,56 @@ h3 {
     }
 }
 
+// Бургерное меню в шапке
+
+.wrapper {
+    padding-top: 1.75rem;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 25px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.icon.active .header__hamburger {
+    background: rgba(0, 0, 0, 0);
+}
+
+.icon.active .header__hamburger:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.icon.active .header__hamburger:after {
+    top: 0;
+    transform: rotate(135deg);
+}
+
 // Стили страницы каталога
 
 .header {
-    &__inner {
-        border-bottom: 1.5px solid rgb(156, 156, 156);
-        display: flex;
-        justify-content: space-between;
-        padding: 4rem 0 2rem 0;
+    &__body {
+        background: #ffffff;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        width: 100%;
+        height: 5.5rem;
+        top: 0px;
+    }
+
+    &__menu-title {
+        font-size: 1.3rem;
     }
 
     &__logo {
         font-size: 2rem;
         font-family: "Poppins", sans-serif;
-    }
-    &__nav {
-        font-size: 1.3rem;
-        display: flex;
-        align-items: center;
+        position: relative;
     }
     &__list {
         display: flex;
@@ -97,14 +129,91 @@ h3 {
         }
     }
 
+    &__hamburger {
+        width: 40px;
+        height: 4px;
+        transform: translate(-50%, -50%);
+        background: rgb(0, 0, 0);
+        transition: 0.5s;
+        display: inline-block;
+        margin-left: 12px;
+    }
+
+    &__hamburger:before,
+    &__hamburger:after {
+        content: "";
+        width: 40px;
+        height: 4px;
+        position: absolute;
+        background: rgb(0, 0, 0);
+        transition: 0.5s;
+    }
+
+    &__hamburger:before {
+        top: -16px;
+    }
+
+    &__hamburger:after {
+        top: 16px;
+    }
+
+    &__menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__menu li {
+        display: inline-block;
+    }
+
+    &__menu li a {
+        display: block;
+        padding: 10px 15px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    &__menu-toggle {
+        color: rgb(0, 0, 0);
+        padding: 10px 15px;
+        cursor: pointer;
+        display: none;
+    }
+
     @media (max-width: $screen-max-sm) {
+        &__link {
+            font-size: 1.5rem;
+        }
+        &__menu-title {
+            font-size: 2rem;
+        }
         &__nav {
             display: none;
+        }
+        &__menu-toggle {
+            display: block;
+            z-index: 2;
+        }
+        &__menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            width: 100%;
+            z-index: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            box-shadow: -0.5rem 0.5rem 2rem 0 rgba(110, 110, 110, 0.438);
+        }
+        &__menu li {
+            display: block;
         }
     }
     @media (max-width: $screen-max-xxs) {
         &__logo {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
         }
     }
 }
@@ -145,6 +254,7 @@ h3 {
             flex-direction: column;
             box-shadow: 0 0 1rem rgb(221, 221, 221);
             padding: 1rem;
+            justify-content: space-between;
         }
         &__title {
             text-align: center;
@@ -181,7 +291,6 @@ h3 {
         &__assortment {
             flex-direction: column;
             justify-content: flex-start;
-            padding-top: 0rem;
         }
 
         .categories {
@@ -409,7 +518,7 @@ h3 {
 
 .main {
     &__reviews-title {
-        padding: 4rem 0 2rem 0;
+        padding: 2rem 0 2rem 0;
     }
 }
 .review {
