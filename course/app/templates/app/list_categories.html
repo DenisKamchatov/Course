@@ -1,9 +1,13 @@
 {% for c in categories %}
 
 {% if c.pk == cat_selected %}
-<li class="selected">{{ c.title }}</li>
+<li class="selected">
+    <h2>{{ c.title }}</h2>
+</li>
 {% else %}
-<li><a class="hover" href="{{ c.get_absolute_url }}">{{ c.title }}</a></li>
+<li>
+    <h2><a class="hover" href="{{ c.get_absolute_url }}">{{ c.title }}</a></h2>
+</li>
 {% endif %}
 
 {% endfor %}

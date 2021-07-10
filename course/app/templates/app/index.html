@@ -41,9 +41,9 @@
                 <section class="main__assortment">
                     <div class="main__categories categories">
                         {% if cat_selected == 0 %}
-                        <h2 class="categories__title selected">Все категории</h2>
+                        <h1 class="categories__title selected">Все категории</h1>
                         {% else %}
-                        <h2 class="categories__title hover"><a href="{% url 'home' %}">Все категории</a></h2>
+                        <h1 class="categories__title hover"><a href="{% url 'home' %}">Все категории</a></h1>
                         {% endif %}
                         <ul class="categories__list">
                             {% show_categories cat_selected %}
@@ -59,7 +59,7 @@
                             <p class="catalog__description">{{ c.description }}</p>
                             <p class="catalog__price">{{ c.price }}</p>
                             <div class="catalog__more">
-                                <a class="catalog__more-text" href="#">Узнать подробнее</a>
+                                <h4><a class="catalog__more-text" href="#">Узнать подробнее</a></h4>
                             </div>
                         </div>
                         {% endfor %}
@@ -85,28 +85,40 @@
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__block block">
-                    <h3 class="block__title">Покупателям</h3>
+                    <h5 class="block__title">Покупателям</h5>
                     <ul class="block__list">
-                        <li><a href="#"> Доставка</a></li>
-                        <li><a href="#">Оплата</a></li>
-                        <li><a href="#">Личный кабинет</a></li>
+                        <li>
+                            <h6><a href="#"> Доставка</a></h6>
+                        </li>
+                        <li>
+                            <h6><a href="#">Оплата</a></h6>
+                        </li>
+                        <li>
+                            <h6><a href="#">Личный кабинет</a></h6>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer__block block">
-                    <h3 class="block__title">Информация</h3>
+                    <h5 class="block__title">Информация</h5>
                     <ul class="block__list">
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Блог</a></li>
-                        <li><a href="#">Обратная связь</a></li>
+                        <li>
+                            <h6><a href="#">О нас</a></h6>
+                        </li>
+                        <li>
+                            <h6><a href="#">Блог</a></h6>
+                        </li>
+                        <li>
+                            <h6><a href="#">Обратная связь</a></h6>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer__block block">
-                    <h3 class="block__title">Мы на связи</h3>
+                    <h5 class="block__title">Мы на связи</h5>
                     <p class="footer__number"><a href="#">+7 (495) 123-45-67</a></p>
                     <!-- svg спрайт с соц. сетями -->
                 </div>
                 <div class="footer__block block">
-                    <h3 class="block__title">Подписка на новости</h3>
+                    <h5 class="block__title">Подписка на новости</h5>
                     <p class="block__text">Получите доступ к эксклюзивным скидкам</p>
                     <form class="block__form form" action="" method="GET">
                         <label for="email" hidden>Email</label>
